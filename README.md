@@ -33,3 +33,40 @@ app.delete("/listing", function(req, res) {
     req.body should contain the information about that listing that needs to be deleted
     response in empty
 });
+
+
+ - get recommendations of particular listing:
+ 
+app.get("/listings/:id/recommendations", (req, res) => {
+
+    req.body contains recommendations
+    req.param.listingId contains listingId
+    response is json object contains all recommendations
+});
+
+ - post a recommendation for particular listing:
+
+app.post("/listing/:id/recommendation", function(req, res) {
+
+    req.body recommendations
+    req.param.listingId contains listingId
+    response is empty;
+});
+
+ - update a recommendations:
+ 
+app.put("/listing/:d/recommendation", function(req, res) {
+
+    req.body contains information to be updated
+    req.param.listingId contains listingId
+    response is empty
+});
+
+ - delete a recommendation:
+
+app.delete("/listing/:id/recommendation", function(req, res) {
+
+    req.body contains information to be updated
+    req.param.listingId contains listingId
+    response is empty
+});
