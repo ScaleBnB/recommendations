@@ -65,7 +65,7 @@ app.put("/listing/:d/recommendation", function(req, res) {
 
 app.delete("/listing/:id/recommendation", function(req, res) {
 
-    req.body contains information to be updated
+    req.body contains information to be deleted
     req.param.listingId contains listingId
     response is empty
 });
