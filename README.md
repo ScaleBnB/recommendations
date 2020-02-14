@@ -39,7 +39,6 @@ app.delete("/listing", function(req, res) {
  
 app.get("/listings/:id/recommendations", (req, res) => {
 
-    req.body contains recommendations
     req.param.listingId contains listingId
     response is json object contains all recommendations
 });
