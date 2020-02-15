@@ -9,7 +9,10 @@
     "test:coverage": "jest --coverage --colors",
     "react-dev": "webpack -p",
     "start": "nodemon server/index.js",
-    "seed": "node database/seeder.js"
+    "seed1": "node database/mysql-listings_data.js",
+    "seed2": "node database/mysql-recommendations_data.js",
+    "schema": "mysql -u root < schema.sql",
+    "addRecord": "mysql -u root < insert.sql"
   },
   "repository": {
     "type": "git",
