@@ -5,8 +5,7 @@ CREATE TABLE recommendations (
 
   listing_id int,
   id int,
-  title text,
-  price int,
+  title text,  price int,
   homeType text,
   bedsNumber int,
   reviewsAverage float,

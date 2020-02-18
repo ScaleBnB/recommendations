@@ -1,11 +1,11 @@
 const fs = require("fs");
 const faker = require("faker");
 filename = "recommendations.csv";
-
+var id = 1;
 for (var i = 1; i <= 10000000; i++) {
   let listing_id = i;
-  for (var j = 1; j <= 5; j++) {
-    let id = Math.floor(Math.random() * 60000 + 1);
+  let randomNumber = Math.floor(Math.random() * 10 + 3);
+  for (var j = 1; j <= randomNumber; j++) {
     let title = faker.lorem.sentence().slice(0, 5);
     let price = Math.floor(Math.random() * 500) + 60;
     let homeType = ["Entire place", "Private room", "Shared room"][
@@ -25,5 +25,6 @@ for (var i = 1; i <= 10000000; i++) {
     if (i % 100000 === 0) {
       console.log("loaded: " + i);
     }
+    id = id + 1;
   }
 }
