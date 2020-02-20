@@ -14,35 +14,34 @@ app.get("/listings/:id", (req, res) => {
  
 app.get("/listings/:id/recommendations", (req, res) => {
 
-    req.params.id is the listing id 
-    response is json object contains all recommendations for a particular listing
+     - req.params.id is the listing id 
+     - response is json object contains all recommendations for a particular listing
 });
 
  - post a recommendation for particular listing:
 
 app.post("/listings/:id/recommendations", function(req, res) {
 
-    req.body contains recommendation to be posted in format as following:
-    
+     - req.body contains recommendation to be posted in format as following:
     {"listing_id": 5000000,"title":"PostTitle","price": 328,"homeType": "Entire place","bedsNumber": 4,"reviewsAverage": 4.5,"numberOfReviews": 39,"likedStatus": 1,"plusStatus": 0,"image1": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo1","image2": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo2","image3": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo3"}
-    req.params.id is the listing id 
-    response is empty;
+     - req.params.id is the listing id 
+     - response is empty;
 });
 
  - update a recommendations:
  
 app.put("/listings/:id/recommendations", function(req, res) {
 
-    req.body contains information to be updated (TO BE SPECIFIED IN MORE DETAIL)
-    req.params.id is the listing id 
-    response is empty
+     - req.body contains information to be updated (TO BE SPECIFIED IN MORE DETAIL)
+     - req.params.id is the listing id 
+     - response is empty
 });
 
  - delete a recommendation:
 
 app.delete("/listings/:id/recommendations/:id", function(req, res) {
 
-    req.body contains information to be deleted (MORE INFORMATION TO BE PROVIDED)
-    req.params.id is the listing id 
-    response is empty
+     - req.body contains information to be deleted (MORE INFORMATION TO BE PROVIDED)
+     - req.params.id is the listing id 
+     - response is empty
 });
