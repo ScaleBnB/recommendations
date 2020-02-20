@@ -32,7 +32,7 @@ app.post("/listings/:id/recommendations", function(req, res) {
  
 app.put("/listings/:id/recommendations", function(req, res) {
 
-     - req.body contains information to be updated (TO BE SPECIFIED IN MORE DETAIL)
+     - req.body is similar to above
      - req.params.id is the listing id 
      - response is empty
 });
