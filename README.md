@@ -30,10 +30,9 @@ app.post("/listings/:id/recommendations", function(req, res) {
 
  - update a recommendations:
  
-app.put("/listings/:id/recommendations", function(req, res) {
+app.patch("/listings/:id/recommendations", function(req, res) {
 
-     - req.body is similar to above
-     - req.params.id is the listing id 
+     - req.body is similar to above + id property 
      - response is empty
 });
 
