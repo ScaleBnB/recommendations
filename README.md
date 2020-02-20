@@ -6,8 +6,8 @@
  
 app.get("/listings/:id", (req, res) => {
 
-    req.params.id is the listing id 
-    response is json object containing listing info 
+     - req.params.id is the listing id 
+     - response is json object containing listing info 
 });
 
  - get recommendations of particular listing:
@@ -23,7 +23,7 @@ app.get("/listings/:id/recommendations", (req, res) => {
 app.post("/listings/:id/recommendations", function(req, res) {
 
      - req.body contains recommendation to be posted in format as following:
-    {"listing_id": 5000000,"title":"PostTitle","price": 328,"homeType": "Entire place","bedsNumber": 4,"reviewsAverage": 4.5,"numberOfReviews": 39,"likedStatus": 1,"plusStatus": 0,"image1": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo1","image2": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo2","image3": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo3"}
+    {"listing_id": req.params.id,"title":"PostTitle","price": 328,"homeType": "Entire place","bedsNumber": 4,"reviewsAverage": 4.5,"numberOfReviews": 39,"likedStatus": 1,"plusStatus": 0,"image1": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo1","image2": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo2","image3": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo3"}
      - req.params.id is the listing id 
      - response is empty;
 });
