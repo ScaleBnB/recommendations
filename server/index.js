@@ -35,20 +35,7 @@ app.get("/listings/:id/recommendations", (req, res) => {
   });
 });
 // post recommendation for particular listing, where req.body is formatted as following:
-//  {
-//   "listing_id": 5000000,
-//   "title": "PostTitle",
-//   "price": 328,
-//   "homeType": "Entire place",
-//   "bedsNumber": 4,
-//   "reviewsAverage": 4.5,
-//   "numberOfReviews": 39,
-//   "likedStatus": 1,
-//   "plusStatus": 0,
-//   "image1": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo1",
-//   "image2": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo2",
-//   "image3": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo3"
-// };
+// {"listing_id": 5000000,"title":"PostTitle","price": 328,"homeType": "Entire place","bedsNumber": 4,"reviewsAverage": 4.5,"numberOfReviews": 39,"likedStatus": 1,"plusStatus": 0,"image1": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo1","image2": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo2","image3": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo3"}
 app.post("/listings/:id/recommendations", function(req, res) {
   mySql.addRecommendation(req.params.id, req.body, err => {
     if (err) {
@@ -60,9 +47,8 @@ app.post("/listings/:id/recommendations", function(req, res) {
   });
 });
 
-app.put("/put/listing", function(req, res) {
-  console.log(req.body);
-  db.updateListing(req.body, err => {
+app.patch("/listings/:id/recommendations", function(req, res) {
+  mySql.updateRecommendation(req.body, err => {
     if (err) {
       console.log(err);
       res.sendStatus(500);

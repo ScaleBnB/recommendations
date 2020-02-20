@@ -63,5 +63,33 @@ module.exports = {
       }
     );
   },
+  updateRecommendation: (rec, callback) => {
+    con.query(
+      "UPDATE recommendations SET title = ?,price = ?,homeType = ?,\
+    bedsNumber = ?,reviewsAverage = ?,numberOfReviews = ?,likedStatus = ?,\
+    plusStatus = ?,image1 = ?,image2 = ?, image3 = ? WHERE id = ?",
+      [
+        rec.title,
+        rec.price,
+        rec.homeType,
+        rec.bedsNumber,
+        rec.reviewsAverage,
+        rec.numberOfReviews,
+        rec.likedStatus,
+        rec.plusStatus,
+        rec.image1,
+        rec.image2,
+        rec.image3,
+        rec.id
+      ],
+      function(err, results, fields) {
+        if (err) {
+          callback(err);
+        } else {
+          callback();
+        }
+      }
+    );
+  },
   deleteListing: (listingId, callback) => {}
 };
