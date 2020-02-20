@@ -6,24 +6,26 @@
  
 app.get("/listings/:id", (req, res) => {
 
-    req.params.listingId is the id passed in the body
-    response is json object (TO BE SPECIFIED IN MORE DETAIL) 
+    req.params.id is the listing id 
+    response is json object containing listing info 
 });
 
  - get recommendations of particular listing:
  
 app.get("/listings/:id/recommendations", (req, res) => {
 
-    req.param.listingId contains listingId
-    response is json object contains all recommendations for a particular listing (TO BE SPECIFIED IN MORE DETAIL)
+    req.params.id is the listing id 
+    response is json object contains all recommendations for a particular listing
 });
 
  - post a recommendation for particular listing:
 
 app.post("/listings/:id/recommendations", function(req, res) {
 
-    req.body recommendations (TO BE SPECIFIED IN MORE DETAIL)
-    req.param.listingId contains listingId
+    req.body contains recommendation to be posted in format as following:
+    
+    {"listing_id": 5000000,"title":"PostTitle","price": 328,"homeType": "Entire place","bedsNumber": 4,"reviewsAverage": 4.5,"numberOfReviews": 39,"likedStatus": 1,"plusStatus": 0,"image1": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo1","image2": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo2","image3": "http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo3"}
+    req.params.id is the listing id 
     response is empty;
 });
 
@@ -32,7 +34,7 @@ app.post("/listings/:id/recommendations", function(req, res) {
 app.put("/listings/:id/recommendations", function(req, res) {
 
     req.body contains information to be updated (TO BE SPECIFIED IN MORE DETAIL)
-    req.param.listingId contains listingId
+    req.params.id is the listing id 
     response is empty
 });
 
@@ -41,6 +43,6 @@ app.put("/listings/:id/recommendations", function(req, res) {
 app.delete("/listings/:id/recommendations/:id", function(req, res) {
 
     req.body contains information to be deleted (MORE INFORMATION TO BE PROVIDED)
-    req.param.listingId contains listingId
+    req.params.id is the listing id 
     response is empty
 });
