@@ -39,10 +39,7 @@ module.exports = {
         callback(null, listingsArr);
       }
     });
-  },
-  addListing: (listing, callback) => {},
-  updateListing: (listingId, callback) => {},
-  deleteListing: (listingId, callback) => {}
+  }
 };
 
 // getAllListings(()=> {})
