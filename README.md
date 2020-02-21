@@ -38,9 +38,9 @@ app.patch("/listings/:id/recommendations", function(req, res) {
 
  - delete a recommendation:
 
-app.delete("/listings/:id/recommendations/:id", function(req, res) {
+app.delete("/listings/:id/recommendations/:recId", function(req, res) {
 
-     - req.body contains information to be deleted (MORE INFORMATION TO BE PROVIDED)
-     - req.params.id is the listing id 
+     - req.body is empty
+     - req.params.recId is the recommendation id to be deleted 
      - response is empty
 });
