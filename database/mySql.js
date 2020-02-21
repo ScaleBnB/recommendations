@@ -91,5 +91,17 @@ module.exports = {
       }
     );
   },
-  deleteListing: (listingId, callback) => {}
+  deleteRecommendation: (id, callback) => {
+    con.query("DELETE FROM recommendations where id = ?", [id], function(
+      err,
+      results,
+      fields
+    ) {
+      if (err) {
+        callback(err);
+      } else {
+        callback();
+      }
+    });
+  }
 };

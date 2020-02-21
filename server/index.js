@@ -58,8 +58,8 @@ app.patch("/listings/:id/recommendations", function(req, res) {
   });
 });
 
-app.delete("/delete/listing", function(req, res) {
-  db.deleteListing(req.body, err => {
+app.delete("/listings/:id/recommendations/:recId", function(req, res) {
+  mySql.deleteRecommendation(req.params.recId, err => {
     if (err) {
       console.log(err);
       res.sendStatus(500);
