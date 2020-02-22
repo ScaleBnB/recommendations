@@ -3,3 +3,5 @@ bundle.js
 recommendations.csv
 test.csv
 listings.csv
+newrelic.js
+newrelic_agent.log
