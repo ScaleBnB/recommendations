@@ -10,7 +10,7 @@ const port = 3002;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/:id", express.static(path.join(__dirname, "../client/dist")));
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
 //get a particular listing information from listing table;
 app.get("/listings/:id", (req, res) => {

@@ -1,0 +1,28 @@
+config:
+  target: "http://localhost:3002"
+  phases:
+    - duration: 55
+      arrivalRate: 1000
+    - duration: 55
+      arrivalRate: 90
+  processor: "./my-functions.js"
+scenarios:
+  - flow:
+      - function: "generateRandomData"
+      - get:
+          url: "/listings/{{ listing_id }}/recommendations"
+      - post:
+          url: "/listings/{{ listing_id }}/recommendations"
+          json:
+            listing_id: "{{ listing_id }}"
+            title: "{{ title }}"
+            price: "{{price}}"
+            homeType: "{{ homeType }}"
+            bedsNumber: "{{ bedsNumber }}"
+            reviewsAverage: "{{ reviewsAverage }}"
+            numberOfReviews: "{{ numberOfReviews }}"
+            likedStatus: "{{ likedStatus }}"
+            plusStatus: "{{ plusStatus }}"
+            image1: "{{ image1 }}"
+            image2: "{{ image2 }}"
+            image3: "{{ image3 }}"
