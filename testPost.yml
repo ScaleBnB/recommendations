@@ -1,16 +1,14 @@
 config:
   target: "http://localhost:3002"
+  pool: 10000
   phases:
-    - duration: 55
-      arrivalRate: 1000
-    - duration: 55
-      arrivalRate: 90
+    - duration: 45
+      arrivalRate: 100
+
   processor: "./my-functions.js"
 scenarios:
   - flow:
       - function: "generateRandomData"
-      - get:
-          url: "/listings/{{ listing_id }}/recommendations"
       - post:
           url: "/listings/{{ listing_id }}/recommendations"
           json:

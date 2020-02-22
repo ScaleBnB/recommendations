@@ -30,3 +30,6 @@ CREATE TABLE recommendations (
   FOREIGN KEY (listing_id) REFERENCES listings (id)
 
 );
+
+ALTER TABLE recommendations ADD INDEX (listing_id);
+OPTIMIZE TABLE recommendations;
