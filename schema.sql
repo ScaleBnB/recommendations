@@ -33,3 +33,5 @@ CREATE TABLE recommendations (
 
 ALTER TABLE recommendations ADD INDEX (listing_id);
 OPTIMIZE TABLE recommendations;
+CREATE INDEX recommendation_inx ON recommendations(id);
+CREATE INDEX listing_inx ON listings(id);
