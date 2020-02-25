@@ -1,5 +1,6 @@
 var mysql = require("mysql");
 var con = mysql.createConnection({
+  host: "52.55.144.68",
   user: "root",
   database: "sdc_project"
 });
@@ -39,7 +40,7 @@ module.exports = {
     con.query(
       "INSERT INTO recommendations (listing_id, title, price,\
     homeType,bedsNumber,reviewsAverage,numberOfReviews,likedStatus,\
-    plusStatus,image1,image2,image3) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+    plusStatus,image1) VALUES (?,?,?,?,?,?,?,?,?,?)",
       [
         id,
         rec.title,
@@ -50,9 +51,7 @@ module.exports = {
         rec.numberOfReviews,
         rec.likedStatus,
         rec.plusStatus,
-        rec.image1,
-        rec.image2,
-        rec.image3
+        rec.image1
       ],
       function(err, results, fields) {
         if (err) {
@@ -67,7 +66,7 @@ module.exports = {
     con.query(
       "UPDATE recommendations SET title = ?,price = ?,homeType = ?,\
     bedsNumber = ?,reviewsAverage = ?,numberOfReviews = ?,likedStatus = ?,\
-    plusStatus = ?,image1 = ?,image2 = ?, image3 = ? WHERE id = ?",
+    plusStatus = ?,image1 = ? WHERE id = ?",
       [
         rec.title,
         rec.price,
@@ -78,8 +77,6 @@ module.exports = {
         rec.likedStatus,
         rec.plusStatus,
         rec.image1,
-        rec.image2,
-        rec.image3,
         rec.id
       ],
       function(err, results, fields) {

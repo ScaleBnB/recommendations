@@ -19,8 +19,6 @@ function generateRandomData(Context, events, done) {
   const likedStatus = Math.floor(Math.random() * 1 + 0.5);
   const plusStatus = Math.floor(Math.random() * 1 + 0.5);
   const image1 = `http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo1`;
-  const image2 = `http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo2`;
-  const image3 = `http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo3`;
   Context.vars.listing_id = listing_id;
   Context.vars.title = title;
   Context.vars.price = price;
@@ -31,7 +29,5 @@ function generateRandomData(Context, events, done) {
   Context.vars.likedStatus = likedStatus;
   Context.vars.plusStatus = plusStatus;
   Context.vars.image1 = image1;
-  Context.vars.image2 = image2;
-  Context.vars.image3 = image3;
   return done();
 }

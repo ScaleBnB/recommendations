@@ -1,4 +1,4 @@
-config:
+ config:
   target: "http://localhost:3002"
   pool: 10000
   phases:
@@ -22,5 +22,3 @@ scenarios:
             likedStatus: "{{ likedStatus }}"
             plusStatus: "{{ plusStatus }}"
             image1: "{{ image1 }}"
-            image2: "{{ image2 }}"
-            image3: "{{ image3 }}"

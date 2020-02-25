@@ -17,9 +17,7 @@ export default function() {
     numberOfReviews: 15,
     likedStatus: 1,
     plusStatus: 0,
-    image1: `http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo1`,
-    image2: `http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo2`,
-    image3: `http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo3`
+    image1: `http://airbnb-recommendation-photos.s3-website-us-west-1.amazonaws.com/photo1`
   };
   var payload = JSON.stringify(recommendation);
   var params = { headers: { "Content-Type": "application/json" } };
