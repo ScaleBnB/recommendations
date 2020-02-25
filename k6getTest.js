@@ -9,7 +9,9 @@ export const options = {
 // Read operations testing
 export default function() {
   const id = Math.floor(Math.random() * 10000000 + 1);
-  const res = http.get(`http://localhost:3002/listings/${id}/recommendations`);
+  const res = http.get(
+    `http://35.171.9.121:3002/listings/${id}/recommendations`
+  );
   check(res, {
     "status was 200": r => r.status === 200,
     "transaction time OK": r => r.timings.duration < 2000
