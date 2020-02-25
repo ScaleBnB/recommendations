@@ -26,7 +26,10 @@ module.exports = {
   },
   getAllRecommendationsByListingId: (id, callback) => {
     con.query(
-      "SELECT recommendations.id, recommendations.title from recommendations INNER JOIN listings ON listings.id = recommendations.listing_id WHERE listing_id = ?",
+      "SELECT recommendations.id, recommendations.title, recommendations.price, \
+      recommendations.homeType,recommendations.bedsNumber,recommendations.reviewsAverage,\
+      recommendations.numberOfReviews,recommendations.likedStatus,recommendations.plusStatus,\
+      recommendations.image1 from recommendations INNER JOIN listings ON listings.id = recommendations.listing_id WHERE listing_id = ?",
       [id],
       function(err, results, fields) {
         if (err) {
