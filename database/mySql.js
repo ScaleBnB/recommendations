@@ -1,6 +1,7 @@
 var mysql = require("mysql");
 var con = mysql.createConnection({
   host: "52.55.144.68",
+  port: "3306",
   user: "root",
   database: "sdc_project"
 });
