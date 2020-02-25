@@ -2,8 +2,8 @@ import http from "k6/http";
 import { check, sleep } from "k6";
 
 export const options = {
-  vus: 100,
-  duration: "30s"
+  vus: 10,
+  duration: "20s"
 };
 
 // Read operations testing
@@ -14,5 +14,5 @@ export default function() {
     "status was 200": r => r.status === 200,
     "transaction time OK": r => r.timings.duration < 2000
   });
-  sleep(0.1);
+  sleep(0.01);
 }

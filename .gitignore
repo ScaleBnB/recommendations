@@ -4,4 +4,5 @@ recommendations.csv
 test.csv
 listings.csv
 newrelic.js
-newrelic_agent.loggit 
+newrelic_agent.log
+sdc_project_backup.sql
